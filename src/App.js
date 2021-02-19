@@ -9,8 +9,8 @@ function App() {
   useEffect(async () => {
     const doc = await fetchData();
     setData(doc);
-    return () => console.log("unmounting...");
-  }, [data]);
+  }, []);
+  console.log(data);
   return (
     <div className="App container">
       <Cards />
