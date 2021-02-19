@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 const url = "https://covid19.mathdro.id/api";
@@ -34,7 +33,13 @@ export const fetchDailyDate = async () => {
   try {
     //destructing method
     const { data } = await axios.get(`${url}/daily`);
-    console.log(data);
+    const modifiedData = data.map((dailyData) => ({
+      confirmed: dailyData.confirmed.total,
+      deaths: dailyData.deaths.total,
+      date: dailyData.reportDate,
+    }));
+
+    return modifiedData;
   } catch (error) {
     console.log(error.message);
   }
