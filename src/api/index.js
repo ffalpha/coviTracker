@@ -44,3 +44,15 @@ export const fetchDailyDate = async () => {
     console.log(error.message);
   }
 };
+
+export const fetchcountries = async () => {
+  try {
+    const {
+      data: { countries },
+    } = await axios.get(`${url}/countries`);
+
+    return countries.map((country) => country.name);
+  } catch (error) {
+    console.log(error.message);
+  }
+};

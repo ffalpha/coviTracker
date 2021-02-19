@@ -5,6 +5,7 @@ import { fetchData } from "./api/index";
 import style from "./App.css";
 function App() {
   const [data, setData] = useState({});
+  const [selectedcountry, setSelectedCountry] = useState(null);
   useEffect(() => {
     async function getdata() {
       const doc = await fetchData();
@@ -13,11 +14,11 @@ function App() {
 
     getdata();
   }, []);
-
+  console.log(selectedcountry);
   return (
     <div className="App container">
       <Cards data={data} />
-      <CountryPicker />
+      <CountryPicker setSelectedCountry={setSelectedCountry} />
       <Chart />
     </div>
   );
