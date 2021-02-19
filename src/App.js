@@ -5,9 +5,13 @@ import { fetchData } from "./api/index";
 import style from "./App.css";
 function App() {
   const [data, setData] = useState({});
-  useEffect(async () => {
-    const doc = await fetchData();
-    setData(doc);
+  useEffect(() => {
+    async function getdata() {
+      const doc = await fetchData();
+      setData(doc);
+    }
+
+    getdata();
   }, []);
 
   return (
