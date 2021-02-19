@@ -1,9 +1,43 @@
-body {
-  background-color: rgb(250, 250, 250);
+.background-image {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  display: block;
+  background-image: url("./img/bg2.jpg");
+  width: 150%;
+  height: 150%;
+  filter: blur(18px);
+  -webkit-filter: blur(18px);
+}
+
+.bg {
+  background-color: rgb(19, 210, 224); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.image {
+  height: 180px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+@media (max-width: 770px) {
+  .container {
+    margin: 0 10%;
+  }
+  .image {
+    width: 100%;
+  }
 }

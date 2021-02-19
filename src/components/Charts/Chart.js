@@ -4,7 +4,7 @@ import { Line, Bar } from "react-chartjs-2";
 import styles from "./Chart.css";
 function Chart({ data: { confirmed, deaths, recovered }, country }) {
   const [dailyData, setDailyData] = useState([]);
-  console.log(country);
+
   //getting data
   useEffect(() => {
     async function getDailydata() {

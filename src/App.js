@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Cards, Chart, CountryPicker } from "./components";
 import { fetchData } from "./api/index";
 import style from "./App.css";
+import logo from "./img/logo.png";
 function App() {
   const [data, setData] = useState({});
   const [selectedcountry, setSelectedCountry] = useState(null);
@@ -24,9 +25,13 @@ function App() {
 
   return (
     <div className="App container">
-      <Cards data={data} />
-      <CountryPicker setSelectedCountry={setSelectedCountry} />
-      <Chart data={data} country={selectedcountry} />
+      <div className="background-image"></div>
+      <div className="bg">
+        <img src={logo} alt="covid" className="image" />
+        <Cards data={data} />
+        <CountryPicker setSelectedCountry={setSelectedCountry} />
+        <Chart data={data} country={selectedcountry} />
+      </div>
     </div>
   );
 }

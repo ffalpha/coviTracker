@@ -20,7 +20,7 @@ export const fetchData = async (country) => {
     //   deaths: data.deaths,
     //   lastUpdate: data.lastUpdate,
     // };
-
+    console.log(confirmed);
     const modifeiedData = {
       confirmed,
       recovered,
