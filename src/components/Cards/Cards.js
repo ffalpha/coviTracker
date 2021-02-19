@@ -2,9 +2,18 @@ import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import Countup from "react-countup";
 import styles from "./Card.css";
+import Loader from "react-loader-spinner";
 function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
   if (!confirmed) {
-    return "Loading....";
+    return (
+      <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={15000} //3 secs
+      />
+    );
   }
   return (
     <div className="container">
@@ -28,14 +37,14 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
             </Typography>
 
             <Typography variant="body2">
-              Number of active case of COIVD-19
+              Number of active cases of COIVD-19
             </Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={3} className="card recovered">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Reacovered
+              Recovered
             </Typography>
             <Typography variant="h5">
               {" "}
@@ -52,7 +61,7 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
             </Typography>
 
             <Typography variant="body2">
-              Number of active case of COIVD-19
+              Number of recovered cases of COIVD-19
             </Typography>
           </CardContent>
         </Grid>
@@ -76,7 +85,7 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
             </Typography>
 
             <Typography variant="body2">
-              Number of daeths case of COIVD-19
+              Number of Deaths casue of COIVD-19
             </Typography>
           </CardContent>
         </Grid>
