@@ -12,7 +12,7 @@
 }
 
 .bg {
-  background-color: rgb(19, 210, 224); /* Black w/opacity/see-through */
+  background-color: rgb(255, 255, 255); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
@@ -28,9 +28,8 @@
   flex-direction: column;
 }
 .image {
-  height: 180px;
-  width: 150px;
-  margin-top: 10px;
+  width: 370px;
+  margin-top: 50px;
 }
 
 @media (max-width: 770px) {
