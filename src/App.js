@@ -28,8 +28,8 @@ function App() {
       <div className="background-image"></div>
       <div className="bg">
         <img src={logo} alt="covid" className="image" />
-        <Cards data={data} />
         <CountryPicker setSelectedCountry={setSelectedCountry} />
+        <Cards data={data} />
         <Chart data={data} country={selectedcountry} />
       </div>
     </div>
